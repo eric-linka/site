@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agenciademarketingdigital.com.br/sitemap.xml
