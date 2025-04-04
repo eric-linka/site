@@ -48,17 +48,17 @@
       100% { background-position: 0% 50%; }
     }
     .container {
-      max-width: 98%;  /* Changed from 1400px to percentage */
+      max-width: 95%;  /* Changed from 90% to 95% */
       width: 100%;
       background: rgba(255, 255, 255, 0.9);
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      padding: 30px;
+      padding: 20px;
       text-align: center;
       margin: 10px auto;
     }
     .intro { 
-      margin-bottom: 1.5rem; /* Reduced from 2.5rem */
+      margin-bottom: 1rem; /* Reduced from 1.5rem */
     }
     .intro h1 {
       font-size: 1.8rem;
@@ -71,17 +71,32 @@
       line-height: 1.6;
       color: #444;
       margin-bottom: .5rem;
-      text-align: justify;
+      text-align: center; /* Changed from justify to center */
+    }
+    .intro ul {
+      list-style-position: inside;
+      text-align: center;
+      padding-left: 0;
+      margin: 0.5em 0;
     }
     .intro .cta {
       margin-top: 1.5rem;
       color: #1f1c2c;
     }
+    .intro a {
+      color: #1f1c2c;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+    .intro a:hover {
+      opacity: 1;
+    }
     .profiles {
       display: flex;
-      gap: 30px; /* Reduced from 50px */
+      gap: 15px; /* Reduced from 20px */
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 15px; /* Reduced from 20px */
     }
     .profile {
       flex: 1;
@@ -89,7 +104,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 15px; /* Reduced from 20px */
+      padding: 10px; /* Reduced from 12px */
       background: rgba(255, 255, 255, 0.45);
       border-radius: 16px;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Added default shadow */
@@ -111,7 +126,7 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
     }
     .name {
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem; /* Reduced from 1rem */
       font-size: 1.3rem;
       font-weight: 700;
       color: #1f1c2c;
@@ -120,14 +135,20 @@
       font-size: 0.85rem; /* Reduced from 0.9rem */
       line-height: 1.5;
       color: #444;
-      margin: 0.75rem 0;  /* Reduced from 1rem */
+      margin: 0.5rem 0; /* Reduced from 0.75rem */
       text-align: center;
       max-width: 400px;
+    }
+    .bio p {
+      font-size: 1.1rem; /* Increased from default 0.85rem */
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      color: #1f1c2c;
     }
     .links {
       display: flex;
       gap: 10px;
-      margin-top: .6rem;
+      margin-top: 0.5rem; /* Reduced from 0.6rem */
       flex-wrap: wrap;
       justify-content: center;
       animation: pulse 2.5s infinite;
@@ -161,7 +182,7 @@
       pointer-events: none;
     }
     footer {
-      margin-top: 1rem; /* Reduced from 2rem */
+      margin-top: 1.5rem; /* Reduced from 2rem */
       font-size: .75rem;
       color: #aaa;
       text-align: center;
@@ -178,6 +199,14 @@
     }
     .manual-dark .container {
       background: rgba(40, 40, 40, 0.9) !important;
+    }
+    ul {
+      list-style-type: disc;
+      color: #444;
+    }
+    .bio ul {
+      font-size: 0.85rem;
+      line-height: 1.5;
     }
     @media (max-width: 1200px) {
       .container {
@@ -196,14 +225,18 @@
     }
     @media (max-width: 600px) {
       .container {
+        max-width: 95%;  /* Added max-width for mobile */
         padding: 15px;
       }
       
       .intro h1 { font-size: 1.4rem; }
       .intro p { font-size: .9rem; }
+      .intro ul {
+        font-size: 0.85rem;
+      }
       .profile img {
-        width: 120px;  /* Reduced from 140px */
-        height: 120px; /* Reduced from 140px */
+        width: 110px;  /* Reduced from 120px */
+        height: 110px; /* Reduced from 120px */
       }
       .name {
         font-size: 0.9rem;
@@ -211,6 +244,13 @@
       .bio {
         font-size: 0.75rem;
         max-width: 280px; /* Reduced from 300px */
+      }
+      .bio ul {
+        font-size: 0.75rem;
+        padding-left: 1em;
+      }
+      .bio p {
+        font-size: 0.95rem; /* Increased from mobile default */
       }
     }
   </style>
@@ -222,28 +262,22 @@
       
       const content = {
         pt: {
-          title: "Maximizando resultados com Eric e Marcelo",
-          text: "Somos dois profissionais com mais de 25 anos de experiência em tecnologia, dados, marketing e negócios. Atuamos com foco em resultados reais e duradouros, sempre acompanhando as inovações e oportunidades do mercado digital.",
-          text2: "Se você busca conexões profissionais, oportunidades de parcerias ou apenas trocar uma ideia sobre o futuro da tecnologia, estamos aqui.",
-          cta: "Vamos conversar?",
-          next: "🇺🇸 English",
-          nextLang: "en"
+          title: "Acelerando Resultados Online com SEO e Tráfego Pago",
+          text: "Somos dois profissionais e ex-sócios fundadores de agência de marketing digital, com mais de 18 anos de experiência combinada. Unimos nossas especialidades — SEO e tráfego pago — para ajudar empresas a conquistarem resultados reais e sustentáveis no ambiente digital.",
+          text2: "Se você busca crescimento online, otimização de investimentos e estratégias alinhadas com as tendências do mercado, fale com a gente.",
+          cta: "Vamos conversar?"
         },
         en: {
-          title: "Maximizing results with Eric and Marcelo",
-          text: "We are two professionals with over 25 years of experience in technology, data, marketing, and business. We work with a focus on real and lasting results, always keeping up with innovations and opportunities in the digital market.",
-          text2: "If you're looking for professional connections, partnership opportunities, or just want to exchange ideas about the future of technology, we're here.",
-          cta: "Let's talk?",
-          next: "🇪🇸 Español",
-          nextLang: "es"
+          title: "Accelerating Online Results with SEO and Paid Traffic",
+          text: "We are two professionals and former founding partners of a digital marketing agency, with over 18 years of combined experience. We combine our specialties — SEO and paid traffic — to help companies achieve real and sustainable results in the digital environment.",
+          text2: "If you're looking for online growth, investment optimization, and strategies aligned with market trends, let's talk.",
+          cta: "Shall we talk?"
         },
         es: {
-          title: "Maximizando resultados con Eric y Marcelo",
-          text: "Somos dos profesionales con más de 25 años de experiencia en tecnología, datos, marketing y negocios. Trabajamos con un enfoque en resultados reales y duraderos, siempre siguiendo las innovaciones y oportunidades del mercado digital.",
-          text2: "Si buscas conexiones profesionales, oportunidades de asociación o simplemente intercambiar ideas sobre el futuro de la tecnología, estamos aquí.",
-          cta: "¿Hablamos?",
-          next: "🇧🇷 Português",
-          nextLang: "pt"
+          title: "Acelerando Resultados Online con SEO y Tráfico Pago",
+          text: "Somos dos profesionales y ex socios fundadores de agencia de marketing digital, con más de 18 años de experiencia combinada. Unimos nuestras especialidades — SEO y tráfico pago — para ayudar a las empresas a lograr resultados reales y sostenibles en el entorno digital.",
+          text2: "Si buscas crecimiento online, optimización de inversiones y estrategias alineadas con las tendencias del mercado, habla con nosotros.",
+          cta: "¿Conversamos?"
         }
       };
 
@@ -277,33 +311,60 @@
 
   <div class="container">
     <div class="intro" id="intro">
-      <h1>Maximizando resultados com Eric e Marcelo</h1>
-      <p>Somos dois profissionais com mais de 25 anos de experiência em tecnologia, dados, marketing e negócios. Atuamos com foco em resultados reais e duradouros, sempre acompanhando as inovações e oportunidades do mercado digital.</p>
-      <p>Se você busca conexões profissionais, oportunidades de parcerias ou apenas trocar uma ideia sobre o futuro da tecnologia, estamos aqui.</p>
-      <p class="cta" style="text-align: center;"><span style="font-weight: bold">Vamos conversar?</span></p>
+      <h1>Acelerando Resultados Online com SEO e Tráfego Pago</h1>
+      <h2 style="font-size: 1.4rem; margin: 1rem 0;">com <a href="#eric">Eric</a> e <a href="#marcelo">Marcelo</a></h2>
+      <p>Somos dois profissionais com mais de 25 anos de experiência combinada em:</p>
+      <ul style="text-align: left; margin: 1em 0; padding-left: 2em;">
+        <li>Marketing digital, tecnologia e negócios</li>
+        <li>Estratégias com foco em performance real e duradoura</li>
+        <li>SEO (Eric) e tráfego pago (Marcelo), atuando de forma complementar</li>
+        <li>Apoio a empresas que buscam crescimento online com inteligência e dados</li>
+      </ul>
+      <p class="cta" style="text-align: center;">Quer trocar uma ideia? <span style="font-weight: bold">Vamos conversar.</span></p>
     </div>
 
     <div class="profiles">
-      <div class="profile">
+      
+      <div id="eric" class="profile">
+        <div class="name">Eric Gomes</div>
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFFVYKdFnlN2A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711906006313?e=1749081600&v=beta&t=Ws_oy9uq0hUBVMpHz8qmGRxrVdKFUO7uzoHjwXbmjj0" alt="Eric Gomes" />
+        <div class="bio">
+          <p style="font-weight: bold; margin-bottom: 0.5em;">Especialista em SEO e Digital & Web Analytics</p>
+          <ul style="text-align: left; margin: 0; padding-left: 1.2em;">
+            <li>Formado em Ciência da Computação pela PUC-SP</li>
+            <li>Atuou como programador e arquiteto de software</li>
+            <li>Expert em desenvolvimento web e sistemas distribuídos</li>
+            <li>Consultor em transformação digital com foco em resultados sustentáveis</li>
+            <li>Mentor de startups e especialista em estratégias de crescimento orgânico</li>
+          </ul>
+        </div>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/ericmottagomes/" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" /></a>
+          <a href="https://wa.me/5511999503930" target="_blank" title="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" /></a>
+        </div>
+      </div>
+      <div id="marcelo" class="profile">
         <div class="name">Marcelo Caricati</div>
         <img src="https://media.licdn.com/dms/image/v2/D4D03AQHYvF21dz--KA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1665005482096?e=1749081600&v=beta&t=KDZZ2EtTNC9xmYM-U4InFlXmD2Mee9FnCJVccExdesY" alt="Marcelo Caricati" />
-        <p class="bio">Especialista em marketing digital e análise de dados com mais de 25 anos de experiência. MBA em Marketing, expert em SEO e performance digital. Liderou projetos para grandes marcas do varejo e tecnologia.</p>
+        <div class="bio">
+          <p style="font-weight: bold; margin-bottom: 0.5em;">Especialista em tráfego pago e análise de dados</p>
+          <ul style="text-align: left; margin: 0; padding-left: 1.2em;">
+            <li>Mais de 25 anos de experiência no mercado digital</li>
+            <li>MBA em Marketing</li>
+            <li>Certificado em todas as certificações do Google Ads</li>
+            <li>Expert em performance digital</li>
+            <li>Já liderou projetos para grandes marcas do varejo e da tecnologia</li>
+          </ul>
+        </div>
         <div class="links">
           <a href="https://www.linkedin.com/in/marcelo-caricati-83ab7018/" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" /></a>
           <a href="https://wa.me/5511982432765" target="_blank" title="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" /></a>
         </div>
       </div>
 
-      <div class="profile">
-        <div class="name">Eric Gomes</div>
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFFVYKdFnlN2A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711906006313?e=1749081600&v=beta&t=Ws_oy9uq0hUBVMpHz8qmGRxrVdKFUO7uzoHjwXbmjj0" alt="Eric Gomes" />
-        <p class="bio">Engenheiro de software e empreendedor com vasta experiência em tecnologia e inovação. Especialista em desenvolvimento web, sistemas distribuídos e arquitetura de software. Mentor de startups e consultor de transformação digital.</p>
-        <div class="links">
-          <a href="https://www.linkedin.com/in/ericmottagomes/" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" /></a>
-          <a href="https://wa.me/5511999503930" target="_blank" title="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" /></a>
-        </div>
-      </div>
     </div>
+
+    <br /> <!-- Added space before footer -->
 
     <footer>
       © 2025 Marketing Digital. Todos os direitos reservados — <a href="https://agenciademarketingdigital.com.br" target="_blank">agenciademarketingdigital.com.br</a>.
