@@ -295,6 +295,37 @@
       const isDark = document.body.classList.contains("manual-dark");
       btn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
     }
+    function trackContactClick(event) {
+      const link = event.currentTarget;
+      const person = link.closest('.profile').id;
+      const platform = link.getAttribute('data-platform');
+      
+      // Create custom event
+      const contactEvent = new CustomEvent('contactClick', {
+        detail: {
+          person: person,
+          platform: platform,
+          timestamp: new Date().toISOString()
+        }
+      });
+
+      // Dispatch event
+      document.dispatchEvent(contactEvent);
+      
+      // If you have GTM, you can push to dataLayer
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          'event': 'contact_click',
+          'contact_person': person,
+          'contact_platform': platform
+        });
+      }
+    }
+
+    // Add event listener for tracking
+    document.addEventListener('contactClick', (e) => {
+      console.log('Contact clicked:', e.detail);
+    });
   </script>
 </head>
 <body>
@@ -339,8 +370,20 @@
           </ul>
         </div>
         <div class="links">
-          <a href="https://www.linkedin.com/in/ericmottagomes/" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" /></a>
-          <a href="https://wa.me/5511999503930" target="_blank" title="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" /></a>
+          <a href="https://www.linkedin.com/in/ericmottagomes/" 
+             target="_blank" 
+             title="LinkedIn" 
+             data-platform="linkedin" 
+             onclick="trackContactClick(event)">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" />
+          </a>
+          <a href="https://wa.me/5511999503930" 
+             target="_blank" 
+             title="WhatsApp" 
+             data-platform="whatsapp" 
+             onclick="trackContactClick(event)">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" />
+          </a>
         </div>
       </div>
       <div id="marcelo" class="profile">
@@ -357,8 +400,20 @@
           </ul>
         </div>
         <div class="links">
-          <a href="https://www.linkedin.com/in/marcelo-caricati-83ab7018/" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" /></a>
-          <a href="https://wa.me/5511982432765" target="_blank" title="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" /></a>
+          <a href="https://www.linkedin.com/in/marcelo-caricati-83ab7018/" 
+             target="_blank" 
+             title="LinkedIn" 
+             data-platform="linkedin" 
+             onclick="trackContactClick(event)">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" />
+          </a>
+          <a href="https://wa.me/5511982432765" 
+             target="_blank" 
+             title="WhatsApp" 
+             data-platform="whatsapp" 
+             onclick="trackContactClick(event)">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" />
+          </a>
         </div>
       </div>
 
